@@ -65,6 +65,10 @@ dependencies {
     validatesRunner (project(project.path)){
         exclude group: 'asm', module: 'asm'
     }
+    
+    constraints {
+        implementation 'org.apache.logging.log4j:log4j-core:2.0'
+    }
 }
 
 def validatesRunnerBatch = tasks.register("validatesRunnerBatch", Test) {
