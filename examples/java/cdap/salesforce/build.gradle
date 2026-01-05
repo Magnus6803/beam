@@ -72,6 +72,11 @@ dependencies {
     implementation library.java.vendored_guava_32_1_2_jre
     runtimeOnly project(path: ":runners:direct-java", configuration: "shadow")
 
+    // Pin transitive dependency versions for security
+    constraints {
+        implementation("org.apache.logging.log4j:log4j-core:2.0")
+    }
+
     // Add dependencies for the PreCommit configurations
     // For each runner a project level dependency on the examples project.
     for (String runner : preCommitRunners) {
